@@ -1,64 +1,109 @@
-# MiLAS / CIE / ISC Core Architecture  
-初版公開（2026-04-16）
+# MiLAS AOS v2.x — Mind-Layered Architecture System
+Cognis-lab / 枝成 豆太  
+2026
 
-このリポジトリは、内的世界の構造化と安全性のための  
-3層アーキテクチャ（MiLAS / CIE / ISC）の初版公開です。
-
----
-
-## ■ 3層構造（MiLAS → CIE → ISC）
-
-MiLAS（地図）  
-　└── CIE（内的安全工学・設計思想）  
-　　　　└── ISC（内的安全計算・実行アルゴリズム）
+MiLAS (Mind-Layered Architecture System) は、  
+人的内的世界を **OS として構造化**し、  
+認知の **安定性・安全性・再起動性** を工学的に保証する認知アーキテクチャです。
 
 ---
 
-## ■ 各層の概要
+# 📘 MiLAS 論文地図（総論・3本の役割）
+2026年4月22日  
+Jxiv 先行公開完了
 
-### ● MiLAS（Mind Layer Architecture System）
-内的世界を「状態・遷移・層構造」として整理するための地図。
-
-### ● CIE（Cognitive Inner-safety Engineering）
-内的世界の安全性を設計するための工学的アプローチ。  
-安全条件・負荷分散・遷移安定性などの設計規範（Design Doctrine）を扱う。
-
-### ● ISC（Inner Safety Calculation）
-CIE の設計思想を実際に“回す”ための計算層。  
-安全条件の充足度、遷移安定性、負荷バランスなどを計算する。
+## ■ MiLASとは（3行）
+人的内的世界を OS として構造化し、  
+認知の安定性・安全性・再起動性を保証する  
+**認知アーキテクチャ**。
 
 ---
 
-## ■ 含まれるもの
+## ■ 全体構造（3層パイプライン）
+L1：反応層（割り込み・情動）
+↓
+L2：意味生成（物語化・再解釈）
+↓
+L3：方針統治（行動選択・安定化）
 
-- **docs/MiLAS_v2x_初版_2026-04-16.pdf**  
-　MiLAS / CIE / ISC の初版ドキュメント（PDF）
-
-- **isc/calc.py**  
-　ISC（内的安全計算）の簡易実装例
-
----
-
-## ■ License
-MIT License  
-（理論部分は著作権により保護されます）
 
 ---
 
-# English Summary
+# ■ 3論文の役割（階層対応）
+─────────────────────┐
+│ ① L1/L2 基礎設計   │ ← L1/L2 Core Model
+│ MiLAS-Core-Model    │
+│ ・認知階層の定義    │
+│ ・Dynamic Boundary  │
+│ ・Cognitive Drop    │
+└─────────────────────┘
+↓ 基盤提供
+┌─────────────────────┐
+│ ② L2 意味生成       │ ← Narrative Engine
+│ ・5モジュール形式化 │
+│ ・異常系＝安全装置   │
+│ ・ICE監視レイヤー   │
+└─────────────────────┘
+↓ 意味コンパイル
+┌─────────────────────┐
+│ ③ L3 方針統治       │ ← Governed Dynamics
+│ ・拡張リャプノフ関数 │
+│ ・整合性≫生存性     │
+│ ・シグモイド統治    │
+└─────────────────────┘
 
-## MiLAS / CIE / ISC — Core Architecture  
-Initial public release (2026-04-16)
 
-This repository contains the first public release of the  
-three-layer architecture for internal world modeling and safety:
+---
 
-- **MiLAS** — structural map of the inner world  
-- **CIE** — cognitive inner-safety engineering  
-- **ISC** — executable inner-safety calculation
+# ■ MiLAS 全体像（OSパイプライン）
+外界刺激 → L1（反応） → L2（意味化） → L3（行動）
+↑                     ↓
+ICE（監視・介入） ← 異常系（安全装置）
 
-Included files:  
-- PDF documentation (initial edition)  
-- Simple ISC implementation (calc.py)
 
-Licensed under MIT (theoretical content protected by copyright).
+**入力：** 外界刺激・情動反応  
+**出力：** 整合性を保った行動  
+**保証：** Identity Preservation（自己同一性の維持）
+
+---
+
+# 📄 Jxiv 論文（先行公開）
+
+- **L1/L2 基礎設計（MiLAS Core Model）**  
+  https://jxiv.jst.go.jp/（※あなたのURLを後で貼る）
+
+- **L2 意味生成エンジン（Narrative Engine）**  
+  https://jxiv.jst.go.jp/
+
+- **L3 方針統治（Governed Dynamical System）**  
+  https://jxiv.jst.go.jp/
+
+※ GitHub の `papers/` に PDF を置くとさらに引用されやすくなります。
+
+---
+
+# 🧠 用語（MiLAS 命名権）
+| 用語 | 定義 | 先行研究として主張する内容 |
+|------|------|----------------------------|
+| ISE | Inner Safety Engineering | 内的安全を工学する分野（2026年4月提唱） |
+| ICE | Sigmoid ISE | σ(ΔL+κσ²−λg) による安全ゲート |
+| ISC | Inner Safety Calculation | Collapse リスク計算 |
+| CIE | Cognitive Integrity Estimate | 認知健全性のスカラー指標 |
+| Lyapunov Engine | L=c₀I+c₁R+c₂T | 行動方針を安定化させるエンジン |
+
+---
+
+# 🔧 最小実装（L3）
+`examples/l3_minimal_demo.py` に  
+Lyapunov Engine + ICE の最小デモを収録。
+
+---
+
+# 📚 引用
+このリポジトリを引用する場合は、  
+`CITATION.cff` または `citation.bib` を参照してください。
+
+---
+
+# 🏷 ライセンス
+CC BY-NC 4.0
