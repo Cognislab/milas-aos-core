@@ -9,7 +9,7 @@ MiLAS AOS Core は、認知の安定性・安全性・回復可能性を
 
 ---
 
-## 1. MiLAS（Mind-in-Life Adaptive System）  
+## 1. MiLAS（Mind-Layer Architecture System）  
 認知の内部世界を OS として捉えるための基底モデル。  
 L1 / L2 / L3 の三層で、認知の動作・乱れ・回復を扱います。
 
